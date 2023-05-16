@@ -146,3 +146,43 @@ snarkjs groth16 prove multiplier_0001.zkey witness.wtns proof.json public.json
 cd build
 snarkjs groth16 verify verification_key.json public.json proof.json
 ```
+
+
+
+##
+
+-- 
+
+```
+snarkjs zkey export solidityverifier multiplier_0001.zkey verifier.sol
+```
+
+### Setup power of tau: 
+
+```bash
+./setup-pot.sh
+```
+This is one time procedure 
+
+### Compile circuit and generate witness
+
+```bash
+./compile.sh
+```
+
+### Now run phase 2 since its dependent on circuit
+```bash
+./setup-phase2.sh
+```
+
+### Now we can generate zk-proof
+
+```bash
+./proof.sh
+```
+
+### Finally, you can verify the proof
+
+```bash
+./verify.sh
+```
